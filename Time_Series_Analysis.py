@@ -12,7 +12,7 @@ output_dir = "output"
 os.makedirs(output_dir, exist_ok=True)
 
 # Load the dataset
-file_path = "Project Stock Data.csv"  # Ensure this file is in your repo
+file_path = "Q3_Q4_stock_data.csv"  # Ensure this file is in your repo
 data = pd.read_csv(file_path)
 
 # Convert the Date column to datetime and set it as the index
