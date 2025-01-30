@@ -32,11 +32,12 @@ jobs:
     # Run tests (optional)
     - name: Run tests
       run: |
-        pytest --maxfail=1 --disable-warnings -q
-    
-    - name: Upload Test Results (Optional)
-      if: always()
-      uses: actions/upload-artifact@v2
+        pytest
+
+    # Upload build artifact (update to v3)
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v3
       with:
         name: my-build-artifact
         path: ./path/to/your/artifacts
+
