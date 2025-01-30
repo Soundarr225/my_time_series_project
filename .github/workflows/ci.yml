@@ -1,4 +1,4 @@
-name: CI/CD Pipeline
+name: CI/CD Pipeline - Time Series Analysis
 
 on:
   push:
@@ -9,17 +9,17 @@ on:
       - main
 
 jobs:
-  install_dependencies:
+  run_time_series_analysis:
     runs-on: ubuntu-latest
 
     steps:
     # Checkout the repository
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     # Set up Python
     - name: Set up Python 3.8
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: '3.8'
 
@@ -28,15 +28,15 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        pip install matplotlib pandas numpy statsmodels scikit-learn
 
-    # Run tests (optional)
-    - name: Run tests
-      run: |
-        pytest
+    # Run the Time Series Analysis script
+    - name: Run Time Series Analysis
+      run: python time_series_analysis.py  # Ensure this filename matches your script
 
-    # Upload build artifact (update to v4)
-    - name: Upload build artifact
+    # Upload generated plots as artifacts
+    - name: Upload Time Series Plots
       uses: actions/upload-artifact@v4
       with:
-        name: my-build-artifact
-        path: ./path/to/your/artifacts
+        name: time-series-plots
+        path: output/
