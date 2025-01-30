@@ -31,8 +31,8 @@ jobs:
         pip install matplotlib pandas numpy statsmodels scikit-learn
 
     # Run the Time Series Analysis script
-    - name: Run Time Series Analysis
-      run: python Time Series Analysis.py  # Ensure this filename matches your script
+    - name: Run Time_Series_Analysis
+      run: python Time_Series_Analysis.py  # Ensure this filename matches your script
 
     # Upload generated plots as artifacts
     - name: Upload Time Series Plots
