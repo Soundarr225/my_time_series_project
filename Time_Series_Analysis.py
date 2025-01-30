@@ -11,13 +11,8 @@ if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
 # Load the dataset
-<<<<<<< HEAD
 file_path = "Q3_Q4_stock_data.csv"  # Ensure this file is in your repo
 data = pd.read_csv(file_path)
-=======
-filepath='Q3_Q4_stock_data'
-data = pd.read_csv('filepath')
->>>>>>> a388090 (Updated time series analysis script)
 
 # Convert Date column to datetime and set it as the index
 data['Date'] = pd.to_datetime(data['Date'])
