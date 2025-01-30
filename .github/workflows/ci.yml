@@ -32,7 +32,7 @@ jobs:
 
     # Run the Time Series Analysis script
     - name: Run Time Series Analysis
-      run: python time_series_analysis.py  # Ensure this filename matches your script
+      run: python Time Series Analysis.py  # Ensure this filename matches your script
 
     # Upload generated plots as artifacts
     - name: Upload Time Series Plots
