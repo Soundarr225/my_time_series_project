@@ -34,9 +34,10 @@ jobs:
     - name: Run Time_Series_Analysis
       run: python Time_Series_Analysis.py  # Ensure this filename matches your script
 
-    # Upload generated plots as artifacts
+    # Adjust the path where the plots are saved
     - name: Upload Time Series Plots
       uses: actions/upload-artifact@v4
       with:
         name: time-series-plots
-        path: output/  # Adjust the path where the plots are saved
+        path: plots/  # Ensure this matches the directory where plots are saved
+
